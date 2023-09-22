@@ -19,7 +19,8 @@ for k=3:size(e,1)
     yPredicted(k) = predictor(yPredicted(k-1), yPredicted(k-2), e(k), theta);
 end
 
+% Shift yPredicted one to the right to be consistent with y
+yPredicted = [0; yPredicted(1:size(yPredicted, 1)-1)];
+
 xAxis = 1:size(y, 1);
-stem(xAxis, yPredicted);
-hold on
-plot(y);
+plot(xAxis, [y, yPredicted]);
