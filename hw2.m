@@ -11,3 +11,15 @@ for k = 2:size(y,1)-1
 end
 
 theta = inv(phiMat.'*phiMat)*phiMat.' * yMat;
+
+% Problem 3
+yPredicted = zeros(size(e, 1));
+
+for k=3:size(e,1)
+    yPredicted(k) = predictor(yPredicted(k-1), yPredicted(k-2), e(k), theta);
+end
+
+xAxis = 1:size(y, 1);
+stem(xAxis, yPredicted);
+hold on
+plot(y);
