@@ -24,3 +24,7 @@ yPredicted = [0; yPredicted(1:size(yPredicted, 1)-1)];
 
 xAxis = 1:size(y, 1);
 plot(xAxis, [y, yPredicted]);
+
+var(e)
+var(y)
+var(yPredicted)
