@@ -13,7 +13,7 @@ end
 theta = inv(phiMat.'*phiMat)*phiMat.' * yMat;
 
 % Problem 3
-yPredicted = zeros(size(e, 1));
+yPredicted = zeros(size(e, 1), 1);
 
 for k=3:size(e,1)
     yPredicted(k) = predictor(yPredicted(k-1), yPredicted(k-2), e(k), theta);
