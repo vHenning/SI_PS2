@@ -1,3 +1,8 @@
+y = getImpulseResponse();
+
+plot(y);
+input('Press button to continue');
+
 [e, y] = getData(50);
 
 % Problem 2
