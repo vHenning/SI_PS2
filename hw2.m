@@ -21,7 +21,7 @@ theta = inv(phiMat.'*phiMat)*phiMat.' * yMat;
 yPredicted = zeros(size(e, 1), 1);
 
 for k=3:size(e,1)
-    yPredicted(k) = predictor(yPredicted(k-1), yPredicted(k-2), e(k), theta);
+    yPredicted(k) = predictor(y(k), y(k-1), e(k), theta);
 end
 
 % Shift yPredicted one to the right to be consistent with y
